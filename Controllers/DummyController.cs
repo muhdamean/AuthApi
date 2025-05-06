@@ -17,7 +17,7 @@ public class DummyController : ControllerBase
     {
         // Simulate some data
         var faker = new Faker<CustomerDto>()
-           .RuleFor(a => a.Id, f => f.IndexFaker)
+           .RuleFor(a => a.Id, f => f.IndexFaker + 1)
            .RuleFor(a => a.AccountNumber, f => "ACC" + f.Random.ReplaceNumbers("##########"))
            .RuleFor(a => a.ClientNumber, f => "CLT" + f.Random.ReplaceNumbers("#######"))
            .RuleFor(a => a.AccountBranch, f => f.Company.CompanyName() + " Branch")
@@ -55,7 +55,7 @@ public class DummyController : ControllerBase
     {
         // Simulate some data
         var faker = new Faker<SignatoryDto>()
-           .RuleFor(p => p.Id, f => f.IndexFaker)
+           .RuleFor(p => p.Id, f => f.IndexFaker + 1)
            .RuleFor(p => p.AccountNumber, f => "ACC" + f.Random.ReplaceNumbers("##########"))
            .RuleFor(p => p.ClientNumber, f => "CLT" + f.Random.ReplaceNumbers("#######"))
            .RuleFor(p => p.PersonGender, f => f.PickRandom("Male", "Female"))
@@ -90,7 +90,7 @@ public class DummyController : ControllerBase
     {
         // Simulate some data
         var faker = new Faker<TransactionDto>()
-           .RuleFor(t => t.Id, f => f.IndexFaker)
+           .RuleFor(t => t.Id, f => f.IndexFaker + 1)
            .RuleFor(t => t.AccountNumber, f => "ACC" + f.Random.ReplaceNumbers("##########"))
            .RuleFor(t => t.TransactionNumber, f => "TXN" + f.Random.ReplaceNumbers("########"))
            .RuleFor(t => t.Location, f => f.Address.City())
